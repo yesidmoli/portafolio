@@ -1,0 +1,885 @@
+body, html {
+    margin: 0;
+    background-color: #000;
+    cursor: url(assets/img/cursor.png), 15 15,move;
+    overflow-x: hidden;
+    height: 100vh;
+}
+.hidden {
+    display: none; 
+}
+.name-text {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+#typed-name {
+    /* font-family: 'Orbitron', sans-serif; */
+    font-family: 'Audiowide', sans-serif;
+    font-size: 5em;
+    font-weight: bold;
+    text-align: center;
+    color: transparent;
+    /* Elimina el relleno */
+    -webkit-text-stroke: 1px #14e956;
+    /* Añade el contorno (color y grosor) */
+    text-stroke: 1px #14e956;
+
+
+}
+
+.fade-out {
+    animation: fadeOut 1s forwards;
+    display: none;
+
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #10e956;
+    height: 10vh;
+    z-index: 1002;
+    position: sticky
+;
+    top: 0;
+
+   
+}
+.img-icon{
+    margin-left: 1rem;
+        
+}
+.menu {
+    display: none;
+    /* Ocultar el menú por defecto */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    /* Altura del botón */
+    left: 0;
+    background-color: #1e2128;
+    width: 100%;
+    padding: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    
+}
+
+.menu a {
+    color: #14e956;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.menu a:hover {
+    background-color: #444;
+}
+
+.hamburger {
+    cursor: pointer;
+    padding: 10px;
+    color: black;
+    border: none;
+    font-size: 3em;
+    position: relative;
+   
+    transition: transform 0.3s ease forwards;
+    background-color: transparent;
+}
+
+/* Estilo para el menú visible */
+.menu.show {
+
+    display: flex;
+    flex-direction: row;
+    /* Mostrar el menú cuando tiene la clase 'show' */
+    opacity: 1;
+    justify-content: space-evenly;
+    font-family: 'Audiowide', sans-serif;
+    align-items: center;
+    
+}
+
+/* Estilo para el cuerpo cuando el menú está abierto */
+body.menu-open {
+
+ 
+    /* Evitar el desplazamiento del cuerpo */
+}
+
+/* Estilo para el botón de hamburguesa cuando está activo */
+.hamburger.active {
+    transform: rotate(90deg);
+    /* Rotar al abrir */
+}
+
+
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url(assets/img/fondo.svg); */
+    background-image: linear-gradient(to right bottom, rgba(5, 8, 16, .6), rgba(5, 8, 16, .6)), url(assets/img/fondo.svg);
+    background-size: cover;
+    width: 100%;
+    height: 90vh;
+  
+  
+
+
+}
+
+.main-container__name {
+    background: rgba(20, 233, 88, .157);
+    border-radius: 10px;
+    color: #14e956;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: .05em;
+    margin: 0;
+    padding: 10px;
+    width: max-content;
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+    
+}
+.main-container__name p{
+    margin: 0px;
+    font-family: 'Orbitron', sans-serif; 
+}
+
+.icon {
+    display: inline-block;
+    animation: bounce 0.5s infinite alternate; /* Aplicar animación */
+}
+
+.main-container__img{
+    height: 292px;
+    width: 400px;
+    transform: translateX(100%);
+}
+.main-container__text-content{
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.6rem;
+    margin: 0px;
+    width: 90%;
+}
+.main-container__text-content span{
+    color: #14e956;
+    font-weight: bold;
+    font-family: 'Audiowide', sans-serif;
+    
+}
+.section-info{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    /* animation: slideIn 1s forwards; */
+    transition: opacity 1s;
+    transform: translateX(-100%); /* Comienza fuera de la pantalla */
+    margin-top: 7rem;
+    
+   
+}
+.section-info.visible {
+    opacity: 1;
+    animation: slideIn 1s forwards; 
+}
+
+.text-p{
+    color: white;
+    font-family: 'Exo Space', sans-serif;
+    letter-spacing: .04em;
+    line-height: 20px;
+    font-weight: 500;
+    font-size: 15px;
+}
+.iconos{
+    display: flex;
+    gap: 20px;
+}
+.iconos img{
+    width: 30px;
+    height: 30px;
+    
+}
+.iconos a{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    animation: zoomIn 1s ease forwards;
+    opacity: 1;
+    transition: opacity 1s;
+}
+.iconos p{
+    margin: 0px;
+}
+.iconos a:nth-child(1) {
+    background-color: #333; /* Color de fondo para el primer icono (Git) */
+}
+
+.iconos a:nth-child(2) {
+    background-color: #0077b5; /* Color de fondo para el segundo icono (LinkedIn) */
+}
+.iconos a:hover {
+    opacity: 0.8; 
+}
+
+.skills{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0;
+    align-items: center;
+    height: 60vh;
+
+}
+
+
+.skills__title{
+    align-items: center;
+    background: #12141d;
+    border-radius: 12px;
+    box-shadow: inset 0 0 4px 1px #14e956;
+    -webkit-box-shadow: inset 0 0 4px 1px #14e956;
+    -moz-box-shadow: inset 0 0 4px 1px #14e956;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    padding: .8rem 2rem;
+    color: white;
+}
+.skills__title {
+    color: #14e956;
+    font-weight: 900;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-transform: uppercase;
+    font-family: 'Exo Space', sans-serif;
+    font-size: 2.2rem;
+}
+.content-skills{
+    align-items: center;
+    background: #0c8c34;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: .5rem;
+    width: 50%;
+    
+}
+
+
+.box-content{
+    display: flex;
+    align-items: center;
+    background: #021709;
+    border-radius: 8px;
+    flex: 0 1 18%;
+    height: 60px;
+    justify-content: space-evenly;
+    margin: 1%;
+    color: white;
+    font-family: 'Audiowide', sans-serif;
+    
+}
+.box-content p{
+    font-size: 12px;
+}
+
+.projects{
+    display: flex;
+    justify-content: center;
+    height: 40vh;
+    align-items: center;
+    background-image: linear-gradient(to right bottom, rgba(5, 8, 16, .6), rgba(5, 8, 16, .6)), url(assets/img/fondo.svg);
+    background-size: cover;
+    
+}
+.projects a{
+    text-decoration: none;
+   
+    font-family: 'Orbitron', sans-serif;
+
+}
+.button-wrap {
+    align-items: center;
+    display: flex;
+    height: 15vh;
+    justify-content: center;
+    position: relative; 
+    
+}
+
+.button-wrap .butt {
+    background: #0c8c34;
+    background-image: linear-gradient(315deg, #0c8c34, #0c8c34);
+    border: none;
+    border-radius: 7px;
+    box-shadow: 9px 7px 32px -11px rgba(254, 254, 254, 0.74);
+    cursor: pointer;
+    font-weight: 900;
+    outline: none;
+    padding: 1rem 3rem;
+    position: relative; 
+    animation: pulse 1.5s infinite; 
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+}
+
+
+.quote {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10rem;
+    margin-top: 10rem;
+    position: relative;
+}
+
+.quote.show .quote-body {
+    -webkit-animation: zoomIn 1.5s ease forwards;
+    animation: zoomIn 1.5s ease forwards;
+}
+
+.quote .quote-body {
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    align-content: center;
+    align-items: center;
+    background-color: transparent;
+    background-image: url(assets/img/quote.png);
+    border-radius: 15px;
+    box-shadow: 0 0 1px 3px rgba(20, 233, 86, .98);
+    -webkit-box-shadow: 0 0 1px 3px rgba(20, 233, 86, .98);
+    -moz-box-shadow: 0 0 1px 3px rgba(20, 233, 86, .98);
+    display: grid;
+    grid-template-areas:
+        "left . . ."
+        ". quote quote ."
+        ". quote quote ."
+        ". . . right";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    height: 200px;
+    justify-items: center;
+    position: relative;
+    width: 60%;
+    z-index: 10;
+}
+
+.quote .quote-body .left {
+    grid-area: left;
+    height: 100px;
+    margin-top: -2.4rem;
+    width: 100px;
+    z-index: 100;
+}
+.quote .quote-body .quote-body-content {
+    grid-area: quote;
+}
+
+.quote .quote-body .right {
+    grid-area: right;
+    height: 100px;
+    margin-bottom: -2.4rem;
+    width: 100px;
+    z-index: 100;
+}
+
+.quote .quote-body .quote-body-content p {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 0;
+    opacity: .8;
+    text-transform: capitalize;
+    font-family: 'Audiowide', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+footer {
+    margin: 0;
+    width: 100%;
+}
+footer .social {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 5rem;
+    padding: 0;
+}
+
+footer .social .social-title {
+    align-self: center;
+    margin-bottom: 4.5rem;
+    -webkit-transform: rotate(3.6deg);
+    transform: rotate(3.6deg);
+}
+
+footer .social .social-title h2 {
+    color: #14e956;
+    font-family: 'Audiowide', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 0;
+    opacity: .9;
+    text-shadow: 1px 1px 0 #14e956, -1px -1px 0 #14e956, 1px -1px 0 #14e956, -1px 1px 0 #14e956, 1px 1px 0 #14e956;
+    text-transform: uppercase;
+}
+
+footer .social .social-body {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+footer .social .social-mail {
+    align-items: center;
+    background: #10ba46;
+    cursor: pointer;
+    display: flex;
+    height: 4rem;
+    justify-content: center;
+    width: 100%;
+}
+
+footer .social .social-mail .box {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    width: 23%;
+}
+footer .social .social-mail .box .mail {
+    height: 50px;
+    margin: -.3rem 0 0;
+    width: 50px;
+}
+
+footer .footer {
+    align-items: center;
+    background: #1f2128;
+    display: flex;
+    height: -webkit-max-content;
+    height: max-content;
+    justify-content: center;
+    width: 100%;
+
+}
+footer .footer p {
+    color: #10ba45;
+    font-family: Cyborg;
+    font-size: 1.4rem;
+    font-weight: 900;
+    margin: 0;
+    padding: 2rem 0;
+    text-transform: capitalize;
+}
+
+footer .footer p span {
+    -webkit-animation: heartBeat 2.5s infinite;
+    animation: heartBeat 2.5s infinite;
+    display: inline-block;
+}
+
+footer .social .social-body .github-box {
+    align-items: center;
+    background: #333;
+    color: #d6d6d6;
+    cursor: pointer;
+    display: flex;
+    height: 9rem;
+    justify-content: space-evenly;
+    padding: 0 1.5rem;
+    position: relative;
+    width: 50%;
+    font-family: 'Audiowide', sans-serif;
+    text-decoration: none;
+    font-size: 2.9rem;
+}
+
+footer .social .social-body .linkedin-box {
+    align-items: center;
+    background: #0077b5;
+    color: #cce4f0;
+    cursor: pointer;
+    display: flex;
+    height: 9rem;
+    justify-content: space-evenly;
+    padding: 0 1.5rem;
+    width: 50%;
+    font-family: 'Audiowide', sans-serif;
+    text-decoration: none;
+    font-size: 2.9rem;
+}
+footer .social .social-body {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+footer .social .social-body .github-box svg, footer .social .social-body .linkedin-box svg {
+    height: 85px;
+    width: 85px;
+}
+footer .social .social-mail .box {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    width: 23%;
+    text-decoration: none;
+}
+footer .social .social-mail .box p {
+    color: #d0fbdd;
+    font-family: 'Audiowide', sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+    margin: 0 0 -.3rem;
+    text-transform: uppercase;
+    text-decoration: none ;
+}
+.social-mail{
+    text-decoration: none;
+}
+@keyframes  heartBeat{
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    14% {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+    28% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    42% {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+    }
+    70% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+/* Definición de la animación de pulsación */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1); 
+    }
+    50% {
+        transform: scale(1.1); 
+    }
+}
+
+
+
+
+ 
+@keyframes zoomIn{
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(.3, .3, .3);
+        transform: scale3d(.3, .3, .3);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideImage {
+    0% {
+        transform: translateX(100%); /* Comienza fuera de la pantalla a la derecha */
+        opacity: 0; /* Comienza invisible */
+    }
+    100% {
+        transform: translateX(0); /* Termina en su posición original */
+        opacity: 1; /* Vuelve a ser visible */
+    }
+}
+@keyframes slideHeader {
+    0% {
+        transform: translateY(0); /* Comienza fuera de la pantalla a la izquierda */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* Termina en su posición original */
+        opacity: 1; /* Vuelve a ser visible */
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%); /* Comienza fuera de la pantalla a la izquierda */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0); /* Termina en su posición original */
+        opacity: 1; /* Vuelve a ser visible */
+    }
+}
+@keyframes bounce {
+    0% {
+        transform: translateY(1); /* Posición inicial */
+    }
+   
+    100% {
+        transform: translateX(3px); /* Mover hacia arriba */
+    }
+}
+/* Definir la animación */
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 479px) {
+    .quote .quote-body {
+        height: 160px;
+        width: 87%;
+    }
+    .quote .quote-body .quote-body-content p {
+        font-size: 1.2rem;
+    }
+    .quote .quote-body .left {
+        height: 60px;
+        margin-top: -1.6rem;
+        width: 60px;
+    }
+    .quote .quote-body .right {
+        height: 60px;
+        margin-bottom: -1.6rem;
+        width: 60px;
+    }
+    .content-skills{
+        width: 80%;
+        flex-direction: column;
+        align-items: normal;
+        flex: none;
+        justify-content: center;
+    }
+    footer .social .social-title{
+        font-size: 10px;
+    }
+
+    footer .social .social-title h2{
+        font-size: 1.5rem;
+    }
+    footer .social .social-body .github-box{
+        font-size: 1.5rem;
+        width: 100%;
+        height: 5rem;
+        padding: 0;
+    }
+    footer .social .social-body .linkedin-box{
+        font-size: 1.5rem;
+        width: 100%;
+        height: 5rem;
+        padding: 0;
+
+    }
+    footer .social .social-body .github-box svg, footer .social .social-body .linkedin-box svg {
+        height: 50px;
+        width: 50px;
+    }
+    footer .social .social-body {
+        flex-direction: column;
+    }
+    footer .social .social-mail .box{
+        width: 70%;
+    }
+    
+}
+
+
+@media (min-width: 760px) and (max-width: 1024px) {
+    .quote .quote-body {
+        height: 180px;
+        width: 70%;
+    }
+
+    .quote .quote-body .left {
+        height: 80px;
+        margin-top: -2rem;
+        width: 80px;
+    }
+
+    .quote .quote-body .right {
+        height: 80px;
+        margin-bottom: -2rem;
+        width: 80px;
+    }
+    footer .social .social-title {
+        margin-bottom: 4rem;
+    }
+    footer .social .social-title h2 {
+        font-size: 2.2rem;
+    }
+    footer .social .social-mail .box .mail {
+        height: 30px;
+        width: 30px;
+    }
+    footer .footer p {
+        font-size: 1.1rem;
+    }
+    footer .social .social-body {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    footer .social .social-body .github-box p {
+        font-size: 1rem;
+    }
+    footer .social .social-body .linkedin-box p {
+        font-size: 1rem;
+    }
+    .content-skills{
+        width: 80%;
+        flex-direction: column;
+        align-items: normal;
+        flex: none;
+        justify-content: center;
+    }
+    footer .social .social-title{
+        font-size: 10px;
+    }
+    
+
+    footer .social .social-title h2{
+        font-size: 1.5rem;
+    }
+    footer .social .social-body .github-box{
+        font-size: 1.5rem;
+        width: 100%;
+        height: 5rem;
+    }
+    footer .social .social-body .linkedin-box{
+        font-size: 1.5rem;
+        width: 100%;
+        height: 5rem;
+
+    }
+    footer .social .social-body .github-box svg, footer .social .social-body .linkedin-box svg {
+        height: 50px;
+        width: 50px;
+    }
+    footer .social .social-body {
+        flex-direction: column;
+    }
+    footer .social .social-mail .box{
+        width: 70%;
+    }
+}
+
+@media (max-width: 600px) {
+    #typed-name{
+        font-size: 3rem;
+    }
+    .main-container{
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-between;
+        height: 100vh;
+        max-width: 100vw;
+        align-items: center;
+    }
+    .main-container__text-content{
+        font-size: 2rem;
+        width: 100%;
+        text-align: center;
+        
+    }
+    .section-info{
+        width: 90%;
+        align-items: center;
+        margin-top: 3rem;
+    }
+    .text-p{
+        font-size: 13px;
+        text-align: center;
+    }
+    .main-container__img{
+        height: 300px;
+        width: 300px;
+    
+    }
+    .header{
+        height: 6vh;
+    }
+    .hamburger{
+        font-size: 2em;
+    }
+    .menu.show{
+        flex-direction: column;
+        z-index: 1000;
+        
+    }
+    .menu{
+        width: 90%;
+        top: 50px;
+        left: 2%;
+    }
+    .iconos{
+        flex-direction: column;
+        width: 100%;
+    }
+    .iconos a{
+        width: 95%;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .content-skills{
+        width: 80%;
+        flex-direction: column;
+        align-items: normal;
+        flex: none;
+        justify-content: center;
+    }
+    footer .social .social-title{
+        font-size: 10px;
+    }
+
+    footer .social .social-title h2{
+        font-size: 1.5rem;
+    }
+    footer .social .social-body .github-box{
+        font-size: 1.5rem;
+        width: 100%;
+        height: 5rem;
+    }
+    footer .social .social-body .linkedin-box{
+        font-size: 1.5rem;
+        width: 100%;
+        height: 5rem;
+
+    }
+    footer .social .social-body .github-box svg, footer .social .social-body .linkedin-box svg {
+        height: 50px;
+        width: 50px;
+    }
+    footer .social .social-body {
+        flex-direction: column;
+    }
+    footer .social .social-mail .box{
+        width: 70%;
+    }
+}
