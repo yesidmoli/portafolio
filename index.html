@@ -22,49 +22,61 @@
     <header class="header ocult">
         <img class="img-icon" src="assets/img/icono.svg"  alt="icono"/>
 
-        <nav>
-            <button class="hamburger" id="hamburger">☰</button>
-            <div class="menu" id="menu">
 
-                <a href="#section-info">Inicio</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Proyectos</a>
-                <a href="#contact">Contacto</a>
-
-                <div class="iconos">
-                    <a href="https://github.com/yesidmoli" target="_blank">
-                        <p>Git</p>
-                        <img src="assets/img/git.svg" alt="Git" />
-                    </a>
-
-                    <a href="https://www.linkedin.com/in/yesid-molina-becerra/" target="_blank">
-                        <P>linkedln</P>
-                        <img src="assets/img/linkedln.svg" alt="Linkedin" />
-                    </a>
-
-                </div>
+        <div class="header__rigth">
+            <div class="language-selector">
+                <img src="assets/img/language.svg">
+                <select id="language-dropdown" class="dropdown">
+                    <option value="en" selected>English</option>
+                    <option value="es">Español</option>
+                </select>
             </div>
-
-
-        </nav>
+    
+            <nav>
+                <button class="hamburger" id="hamburger">☰</button>
+                <div class="menu" id="menu">
+    
+                    <a id="home" href="#section-info">Inicio</a>
+                    <a id="skills" href="#skills">Skills</a>
+                    <a id="project" href="#projects">Proyectos</a>
+                    <a  id="contact" href="#contact">Contacto</a>
+    
+                    <div class="iconos">
+                        <a href="https://github.com/yesidmoli" target="_blank">
+                            <p>Git</p>
+                            <img src="assets/img/git.svg" alt="Git" />
+                        </a>
+    
+                        <a href="https://www.linkedin.com/in/yesid-molina-becerra/" target="_blank">
+                            <P>linkedln</P>
+                            <img src="assets/img/linkedln.svg" alt="Linkedin" />
+                        </a>
+    
+                    </div>
+                </div>
+    
+    
+            </nav>
+        </div>
+        
     </header>
 
     <main class="main-container ocult">
         <section class="section-info" id="section-info">
             <div class="main-container__name">
                 <span class="icon">✌🏻</span>
-                <p> ¡Hola! soy Yesid Molina</p>
+                <p id="name"> ¡Hola! soy Yesid Molina</p>
             </div>
 
 
-            <h1 class="main-container__text-content">
-                Un desarrollador de software
+            <h1 class="main-container__text-content" id="title">
+                Desarrollador
                 <br>
                 <span>Full Stack</span>
                 apasionado por crear soluciones <span>Innovadoras.</span>
             </h1>
 
-            <p class="text-p">He adquirido experiencia en la creación de API REST con Django y en el
+            <p class="text-p" id="description" >He adquirido experiencia en la creación de API REST con Django y en el
                 desarrollo de interfaces modernas con React. Me apasiona aprender y aplicar nuevas tecnologías para
                 encontrar soluciones innovadoras.
                 <br>
@@ -73,12 +85,21 @@
                 que me impulsa a identificar oportunidades de mejora y optimización en cada proceso o solución que se
                 presente para abordar.
             </p>
+
+            <a   id="cv" class="cv-button" href="assets/static/Yesid Molina - CV.pdf" download="Yesid Molina - CV.pdf">
+                Descarga CV
+            </a>
         </section>
 
         <img src="assets/img/person.svg" alt="Person" class="main-container__img" />
+
+
+      
     </main>
 
+
     <section class="skills container-visible ocult" id="skills">
+    
 
         <h1 class="skills__title">Skills</h1>
 
@@ -126,7 +147,7 @@
     <section id="projects" class="projects ocult">
 
         <a href="https://github.com/yesidmoli">
-            <div class="button-wrap"><button class="butt">Explora mis proyectos</button></div>
+            <div class="button-wrap"><button class="butt" id="explora">Explora mis proyectos</button></div>
         </a>
     </section>
 
@@ -138,7 +159,7 @@
                 </path>
             </svg>
             <div class="quote-body-content">
-                <p>Aprender y Emprender </p>
+                <p id="phrase">Aprender y Emprender </p>
             </div><svg fill="#14E956" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" class="right">
                 <path
                     d="M 2 9 L 2 29 L 13 29 L 13 31 C 13 33.007813 12.382813 34.804688 11.441406 36.058594 C 10.503906 37.308594 9.296875 38 8 38 L 7 38 L 7 45 L 8 45 C 15.71875 45 22 38.71875 22 31 L 22 9 Z M 28 9 L 28 29 L 39 29 L 39 31 C 39 33.007813 38.382813 34.804688 37.441406 36.058594 C 36.503906 37.308594 35.296875 38 34 38 L 33 38 L 33 45 L 34 45 C 41.71875 45 48 38.71875 48 31 L 48 9 Z M 4 11 L 20 11 L 20 31 C 20 37.285156 15.144531 42.265625 9 42.796875 L 9 39.734375 C 10.585938 39.425781 12.03125 38.605469 13.042969 37.253906 C 14.273438 35.613281 15 33.410156 15 31 L 15 27 L 4 27 Z M 30 11 L 46 11 L 46 31 C 46 37.285156 41.144531 42.265625 35 42.796875 L 35 39.734375 C 36.585938 39.425781 38.03125 38.605469 39.042969 37.253906 C 40.273438 35.613281 41 33.410156 41 31 L 41 27 L 30 27 Z">
@@ -150,7 +171,7 @@
     <footer id="contact">
         <div class="social">
             <div class="social-title">
-                <h2>Conéctate Conmigo</h2>
+                <h2 id="connect">Conéctate Conmigo</h2>
             </div>
             <div class="social-body"><a class="github-box" href="https://github.com/yesidmoli" target="_blank">
                     <p>Github</p><svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -167,7 +188,7 @@
             </div>
             <a class="social-mail" href="mailto:nyamoli213@gmail.com" target="_blank">
                 <div class="box">
-                    <p>Envíame un correo</p><svg fill="#d0fbdd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                    <p id="email">Envíame un correo</p><svg fill="#d0fbdd" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
                         class="mail">
                         <path
                             d="M24 25.29L4.02 14.5C4.28 11.42 6.86 9 10 9h28c3.14 0 5.72 2.42 5.98 5.5L24 25.29zM23.76 28.48C22.64 30.4 22 32.62 22 35c0 2.16.53 4.2 1.47 6H10c-3.31 0-6-2.69-6-6V17.89l19.29 10.43C23.44 28.4 23.6 28.46 23.76 28.48zM44 17.89v7.74c-2.04-1.97-4.73-3.28-7.72-3.56L44 17.89zM46 35c0 6.075-4.925 11-11 11s-11-4.925-11-11 4.925-11 11-11S46 28.925 46 35zM34.707 31.293l-2-2c-.391-.391-1.023-.391-1.414 0l-2 2c-.391.391-.391 1.023 0 1.414s1.023.391 1.414 0L31 32.414V40c0 .553.447 1 1 1s1-.447 1-1v-7.586l.293.293C33.488 32.902 33.744 33 34 33s.512-.098.707-.293C35.098 32.316 35.098 31.684 34.707 31.293zM40.707 37.293c-.391-.391-1.023-.391-1.414 0L39 37.586V30c0-.553-.447-1-1-1s-1 .447-1 1v7.586l-.293-.293c-.391-.391-1.023-.391-1.414 0s-.391 1.023 0 1.414l2 2C37.488 40.902 37.744 41 38 41s.512-.098.707-.293l2-2C41.098 38.316 41.098 37.684 40.707 37.293z">

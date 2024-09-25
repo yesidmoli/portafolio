@@ -42,15 +42,20 @@ body, html {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    background-color: #10e956;
+    background-color: #10ba46;
     height: 10vh;
     z-index: 1002;
-    position: sticky
-;
-    top: 0;
-
-   
+    position: sticky;
+    top: 0;  
 }
+
+
+.header__rigth{
+    display: flex;
+    align-items: center;
+    
+}
+
 .img-icon{
     margin-left: 1rem;
         
@@ -84,6 +89,7 @@ body, html {
 .hamburger {
     cursor: pointer;
     padding: 10px;
+    padding-top: 0px;
     color: black;
     border: none;
     font-size: 3em;
@@ -185,7 +191,7 @@ body.menu-open {
     /* animation: slideIn 1s forwards; */
     transition: opacity 1s;
     transform: translateX(-100%); /* Comienza fuera de la pantalla */
-    margin-top: 7rem;
+    margin-top: 1rem;
     
    
 }
@@ -266,6 +272,25 @@ body.menu-open {
     text-transform: uppercase;
     font-family: 'Exo Space', sans-serif;
     font-size: 2.2rem;
+}
+.cv-button{
+    box-shadow: inset 0 0 4px 1px #14e956;
+    -webkit-box-shadow: inset 0 0 4px 1px #14e956;
+    -moz-box-shadow: inset 0 0 4px 1px #14e956;
+    display: flex;
+    justify-content: center;
+    color: white;
+    color: #14e956;
+    font-weight: 900;
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-transform: uppercase;
+    font-family: 'Exo Space', sans-serif;
+    font-size: 1rem;
+    width: 30%;
+    padding: 10px;
+    text-decoration: none;
+    animation: pulse 1.5s infinite; 
+    border-radius: 5px;
 }
 .content-skills{
     align-items: center;
@@ -482,7 +507,7 @@ footer .footer {
 }
 footer .footer p {
     color: #10ba45;
-    font-family: Cyborg;
+    font-family: 'Audiowide', sans-serif;
     font-size: 1.4rem;
     font-weight: 900;
     margin: 0;
@@ -557,6 +582,68 @@ footer .social .social-mail .box p {
 .social-mail{
     text-decoration: none;
 }
+
+.language-selector{
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    background-color: #fff;
+    cursor: pointer;
+    padding: 5px 5px;
+    border-radius: 10px;
+}
+
+/* Estilo para el menú desplegable (dropdown) */
+.dropdown {
+    background-color: #0c8c34;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-family: 'Audiowide', sans-serif;
+    border-radius: 10px;
+    cursor: pointer;
+    appearance: none; /* Oculta el estilo por defecto del navegador */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efecto hover */
+.dropdown:hover {
+    background-color: #10ba45;
+    transform: scale(1.05);
+}
+
+/* Estilo para que no se vea el icono por defecto del navegador */
+.dropdown::-ms-expand {
+    display: none;
+}
+
+.dropdown:focus {
+    outline: none;
+}
+
+.download-btn {
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block;
+    font-size: 16px; 
+    margin: 4px 2px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
+}
+
+.download-btn:hover {
+    background-color: #0056b3; /* Color al pasar el ratón sobre el botón */
+}
+
 @keyframes  heartBeat{
     0% {
         -webkit-transform: scale(1);
@@ -802,7 +889,7 @@ footer .social .social-mail .box p {
         align-items: center;
     }
     .main-container__text-content{
-        font-size: 2rem;
+        font-size: 1.6rem;
         width: 100%;
         text-align: center;
         
@@ -810,7 +897,7 @@ footer .social .social-mail .box p {
     .section-info{
         width: 90%;
         align-items: center;
-        margin-top: 3rem;
+        margin-top: 2rem;
     }
     .text-p{
         font-size: 13px;
@@ -882,4 +969,23 @@ footer .social .social-mail .box p {
     footer .social .social-mail .box{
         width: 70%;
     }
+
+    .language-selector{
+        gap: 5px;
+    }
+    .language-selector img{
+        width: 15px;
+        height: 15px;
+        
+    }
+    .dropdown{
+        font-size: 12px;
+    }
+    .cv-button{
+        width: 50%;
+    }
+    footer .footer p {
+        font-size: 1rem;
+    }
+
 }
